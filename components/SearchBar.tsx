@@ -1,10 +1,11 @@
-import { FormEvent } from "react";
+import { FormEvent, FormEventHandler } from "react";
 import { SearchInput } from "./SearchInput";
 
-export function SearchBar() {
-	const onSubmit = (evt: FormEvent<HTMLFormElement>) => {
-		evt.preventDefault();
-	}
+interface Props {
+	onSubmit: FormEventHandler<HTMLFormElement>;
+}
+
+export function SearchBar({ onSubmit }: Props) {
 	return (
 		<>
 			<form onSubmit={onSubmit}>
